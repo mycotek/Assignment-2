@@ -9,3 +9,8 @@ set -e -u -o pipefail
 
 module load python/3.6-conda5.2
 source activate cutadapt-env
+
+fastq_file_forward="$1"
+output_dir="$2"
+forward_primer="$3"
+reverse_primer="$4"
