@@ -14,3 +14,6 @@ fastq_file_forward="$1"
 output_dir="$2"
 forward_primer="$3"
 reverse_primer="$4"
+
+primer_f_rc=$(echo "$forward_primer" | tr ATCGYRKMBVDH TAGCRYMKVBHD | rev)
+primer_r_rc=$(echo "$reverse_primer" | tr ATCGYRKMBVDH TAGCRYMKVBHD | rev)
