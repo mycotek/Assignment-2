@@ -17,3 +17,7 @@ reverse_primer="$4"
 
 primer_f_rc=$(echo "$forward_primer" | tr ATCGYRKMBVDH TAGCRYMKVBHD | rev)
 primer_r_rc=$(echo "$reverse_primer" | tr ATCGYRKMBVDH TAGCRYMKVBHD | rev)
+
+
+fastq_file_reverse="$(dirname "$fastq_file_forward")/$(basename -s ".fastq" "$fastq_file_forward" | sed -e 's/_R1_/_R2_/').fastq"
+echo "Reverse file is $fastq_file_reverse"
