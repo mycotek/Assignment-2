@@ -32,3 +32,8 @@ echo "Reverse output path is $fastq_file_reverse_output"
 if [ ! -d "$output_dir" ]; then
     mkdir "$output_dir"
 fi
+
+cutadapt -a "$forward_primer"..."$primer_r_rc" \
+	   -A "$reverse_primer"..."$primer_f_rc" \
+	   --discard-untrimmed --pair-filter=any \
+	   -o "$fastq_file_forward_output" -p "$fastq_file_reverse_output" "$fastq_file_forward" "$fastq_file_reverse"
