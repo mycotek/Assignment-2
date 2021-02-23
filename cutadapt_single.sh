@@ -21,3 +21,9 @@ primer_r_rc=$(echo "$reverse_primer" | tr ATCGYRKMBVDH TAGCRYMKVBHD | rev)
 
 fastq_file_reverse="$(dirname "$fastq_file_forward")/$(basename -s ".fastq" "$fastq_file_forward" | sed -e 's/_R1_/_R2_/').fastq"
 echo "Reverse file is $fastq_file_reverse"
+
+
+fastq_file_forward_output="$output_dir/$(basename -s ".fastq" "$fastq_file_forward")_trimmed.fastq"
+fastq_file_reverse_output="$output_dir/$(basename -s ".fastq" "$fastq_file_reverse")_trimmed.fastq"
+echo "Forward output path is $fastq_file_forward_output"
+echo "Reverse output path is $fastq_file_reverse_output"
