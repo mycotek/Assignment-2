@@ -27,3 +27,8 @@ fastq_file_forward_output="$output_dir/$(basename -s ".fastq" "$fastq_file_forwa
 fastq_file_reverse_output="$output_dir/$(basename -s ".fastq" "$fastq_file_reverse")_trimmed.fastq"
 echo "Forward output path is $fastq_file_forward_output"
 echo "Reverse output path is $fastq_file_reverse_output"
+
+
+if [ ! -d "$output_dir" ]; then
+    mkdir "$output_dir"
+fi
